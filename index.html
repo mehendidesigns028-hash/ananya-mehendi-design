@@ -874,16 +874,16 @@ async function loadReviews() {
 
         card.className = "review-card";
 
-        const rating = Number(review.rating) || 0;
+        const rating = Number(review.Rating) || 0;
 
         const stars = "★★★★★".slice(0, rating);
 
         card.innerHTML = `
             <div class="stars">${stars}</div>
 
-            <p>${escapeHTML(review.message)}</p>
+            <p>${escapeHTML(review.Message)}</p>
 
-            <h3>${escapeHTML(review.name)}</h3>
+            <h3>${escapeHTML(review.Nameid)}</h3>
 
             <small>Customer Review</small>
         `;
