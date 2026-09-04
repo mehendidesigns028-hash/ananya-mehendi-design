@@ -856,7 +856,7 @@ async function loadReviews() {
 
     const { data, error } = await supabaseClient
         .from("reviews")
-        .select("Nameid, Ratting, Massege, approved")
+        .select("name, rating, message, approved")
         .eq("approved", true)
         .order("created_at", { ascending: false });
 
@@ -872,14 +872,14 @@ async function loadReviews() {
         const card = document.createElement("article");
         card.className = "review-card";
 
-        const rating = Number(review.Ratting) || 0;
+        const rating = Number(review.ratting) || 0;
 
         const stars = "★★★★★".slice(0, rating);
 
         card.innerHTML = `
             <div class="stars">${stars}</div>
-            <p>${escapeHTML(review.Massege || "")}</p>
-            <h3>${escapeHTML(review.Nameid || "")}</h3>
+            <p>${escapeHTML(review.messege || "")}</p>
+            <h3>${escapeHTML(review.name || "")}</h3>
             <small>Customer Review</small>
         `;
 
@@ -919,10 +919,10 @@ async function submitReview() {
             .from("reviews")
             .insert([
     {
-        Nameid: name,
-        Ratting: rating,
-        Massege: message,
-        approved: false
+        name: name,
+rating: rating,
+message: message,
+approved: false
     }
 ])
             .select();
