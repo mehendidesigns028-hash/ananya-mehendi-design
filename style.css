@@ -120,7 +120,7 @@ section h2 i {
             rgba(20, 10, 7, 0.08),
             rgba(20, 10, 7, 0.18)
         ),
-        url("images/hero.png");
+        url("./hero.png");
 
     background-size: cover;
     background-position: center center;
