@@ -1008,57 +1008,7 @@ footer small {
         font-size: 30px;
     }
 }
-.about {
-    min-height: 100vh !important;
-    width: 100% !important;
 
-    padding: 120px 6% !important;
-
-    background-image: url("./images/about.png") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hero {
-    min-height: 100vh !important;
-    width: 100% !important;
-
-    background-image:
-        linear-gradient(
-            rgba(20, 10, 7, 0.05),
-            rgba(20, 10, 7, 0.12)
-        ),
-        url("./images/hero.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-}
-.hero::before {
-    display: none !important;
-}
-.about {
-    width: 100% !important;
-    min-height: 100vh !important;
-
-    background-image:
-        linear-gradient(
-            rgba(20, 10, 7, 0.15),
-            rgba(20, 10, 7, 0.20)
-        ),
-        url("./images/about.png") !important;
-
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-
-    background-attachment: scroll !important;
-}
 /* ================= ABOUT BACKGROUND FINAL FIX ================= */
 
 .about {
