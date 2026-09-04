@@ -980,7 +980,7 @@ async function loadReviews() {
     const result = await supabaseClient
         .from("reviews")
         .select("name, rating, message, approved")
-        .eq("approved", true)
+        
         .order("created_at", { ascending: false });
 
     if (result.error) {
@@ -1040,7 +1040,7 @@ async function submitReview() {
             name: name,
             rating: rating,
             message: message,
-            approved: false
+            
         });
 
 
