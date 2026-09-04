@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya Mehendi — Admin</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<section class="contact">
+
+    <p class="label">ADMIN PANEL</p>
+
+    <h2>
+        Review <i>Management</i>
+    </h2>
+
+    <div id="loginBox">
+
+        <input
+            id="adminEmail"
+            type="email"
+            placeholder="Admin Email"
+        >
+
+        <input
+            id="adminPassword"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button class="gold-btn" onclick="adminLogin()">
+            LOGIN
+        </button>
+
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+
+        <h3>Pending Reviews</h3>
+
+        <div id="pendingReviews"></div>
+
+        <button class="outline-btn" onclick="adminLogout()">
+            LOGOUT
+        </button>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="./supabase.js"></script>
+
+<script>
+
+async function adminLogin() {
+
+    const email =
+        document.getElementById("adminEmail").value.trim();
+
+    const password =
+        document.getElementById("adminPassword").value;
+
+    if (!email || !password) {
+        alert("Enter email and password.");
+        return;
+    }
+
+    const { data, error } =
+        await supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+    if (error) {
+        alert("Login failed: " + error.message);
+        return;
+    }
+
+    const { data: admin, error: adminError } =
+        await supabaseClient
+            .from("admins")
+            .select("user_id")
+            .eq("user_id", data.user.id)
+            .maybeSingle();
+
+    if (adminError || !admin) {
+
+        await supabaseClient.auth.signOut();
+
+        alert("You are not an authorized admin.");
+        return;
+    }
+
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("adminPanel").style.display = "block";
+
+    loadPendingReviews();
+}
+
+
+async function loadPendingReviews() {
+
+    const { data, error } =
+        await supabaseClient
+            .from("reviews")
+            .select("id, name, rating, message, created_at, approved")
+            .eq("approved", false)
+            .order("id", { ascending: false });
+
+    if (error) {
+        console.error(error);
+        alert("Unable to load reviews.");
+        return;
+    }
+
+    const container =
+        document.getElementById("pendingReviews");
+
+    container.innerHTML = "";
+
+    if (!data.length) {
+        container.innerHTML = "<p>No pending reviews.</p>";
+        return;
+    }
+
+    data.forEach(review => {
+
+        const card = document.createElement("article");
+
+        card.className = "review-card";
+
+        const stars =
+            "★★★★★".slice(0, review.rating);
+
+        card.innerHTML = `
+            <div class="stars">${stars}</div>
+
+            <p>${escapeHTML(review.message)}</p>
+
+            <h3>${escapeHTML(review.name)}</h3>
+
+            <small>Pending Approval</small>
+
+            <br><br>
+
+            <button
+                class="gold-btn"
+                onclick="approveReview(${review.id})"
+            >
+                APPROVE
+            </button>
+
+            <button
+                class="outline-btn"
+                onclick="deleteReview(${review.id})"
+            >
+                DELETE
+            </button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+
+async function approveReview(id) {
+
+    const { error } =
+        await supabaseClient
+            .from("reviews")
+            .update({ approved: true })
+            .eq("id", id);
+
+    if (error) {
+        alert("Unable to approve review.");
+        console.error(error);
+        return;
+    }
+
+    alert("Review approved.");
+
+    loadPendingReviews();
+}
+
+
+async function deleteReview(id) {
+
+    if (!confirm("Delete this review?")) {
+        return;
+    }
+
+    const { error } =
+        await supabaseClient
+            .from("reviews")
+            .delete()
+            .eq("id", id);
+
+    if (error) {
+        alert("Unable to delete review.");
+        console.error(error);
+        return;
+    }
+
+    alert("Review deleted.");
+
+    loadPendingReviews();
+}
+
+
+async function adminLogout() {
+
+    await supabaseClient.auth.signOut();
+
+    document.getElementById("adminPanel").style.display = "none";
+    document.getElementById("loginBox").style.display = "block";
+
+}
+
+
+function escapeHTML(text) {
+
+    const div = document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+}
+
+</script>
+
+</body>
+</html>
