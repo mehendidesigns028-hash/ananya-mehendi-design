@@ -258,7 +258,7 @@ section h2 i {
             rgba(20, 10, 7, 0.12),
             rgba(20, 10, 7, 0.18)
         ),
-        url("./images/about.png");
+        url("./about.png");
 
     background-size: cover;
     background-position: center center;
@@ -1795,4 +1795,1258 @@ footer small {
 
     color: #17100d;
 
-    font-weight: bold
+    font-weight: bold* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #17100d;
+    color: #f5e6c8;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 6%;
+
+    background: rgba(23, 16, 13, 0.45);
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(217, 180, 106, 0.18);
+}
+
+.logo {
+    flex-shrink: 0;
+    color: #d9b46a;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #f5e6c8;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    white-space: nowrap;
+}
+
+nav a {
+    color: #f5e6c8;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d9b46a;
+}
+
+/* ================= COMMON ================= */
+
+section {
+    padding: 110px 6%;
+}
+
+.label {
+    color: #d9b46a;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+section h2 {
+    text-align: center;
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.05;
+    font-weight: normal;
+    color: #f7ead1;
+    text-shadow: 2px 3px 15px rgba(0,0,0,0.55);
+}
+
+section h2 i {
+    color: #d9b46a;
+    font-style: italic;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 10, 7, 0.08),
+            rgba(20, 10, 7, 0.18)
+        ),
+        url(" . /hero.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(20, 10, 7, 0.08);
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+    padding: 20px;
+
+    /* NO BOX */
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    text-shadow:
+        2px 3px 12px rgba(0,0,0,0.85);
+}
+
+.eyebrow {
+    color: #e2bd72;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.92;
+    font-weight: normal;
+    color: #fff8e8;
+
+    text-shadow:
+        3px 4px 18px rgba(0,0,0,0.85);
+}
+
+.hero h1 i {
+    color: #e3bd70;
+}
+
+.hero-text {
+    max-width: 620px;
+    margin: 32px auto;
+
+    color: #fff4df;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.9;
+
+    text-shadow:
+        2px 2px 10px rgba(0,0,0,0.9);
+}
+
+.buttons,
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.gold-btn,
+.outline-btn,
+.whatsapp-btn {
+    display: inline-block;
+
+    padding: 14px 27px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.gold-btn {
+    background: #d9b46a;
+    color: #17100d !important;
+    border: 1px solid #d9b46a;
+}
+
+.gold-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(217,180,106,0.3);
+}
+
+.outline-btn {
+    color: #e4c47c !important;
+    border: 1px solid #d9b46a;
+    background: rgba(0,0,0,0.18);
+}
+
+.outline-btn:hover {
+    background: #d9b46a;
+    color: #17100d !important;
+}
+
+.whatsapp-btn {
+    color: white !important;
+    background: #315f43;
+    border: 1px solid rgba(217,180,106,0.4);
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 10, 7, 0.12),
+            rgba(20, 10, 7, 0.18)
+        ),
+        url("./images/about.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.about-text {
+    max-width: 720px;
+    margin: 35px auto;
+
+    padding: 22px 25px;
+
+    color: #fff4df;
+
+    background: rgba(20,10,7,0.30);
+
+    border-left: 2px solid #d9b46a;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.9;
+
+    text-shadow: 1px 2px 8px rgba(0,0,0,0.8);
+}
+
+.location {
+    color: #d9b46a;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery {
+    background: #17100d;
+    padding: 110px 6%;
+}
+
+.gallery h2 {
+    margin-bottom: 55px;
+}
+
+.gallery-grid {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.gallery-item {
+    width: 100%;
+    min-height: 430px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #241916;
+
+    border: 1px solid rgba(217,180,106,0.25);
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+/* IMAGE */
+
+.gallery-item .photo {
+    width: 100%;
+    height: 430px;
+
+    background-color: #17100d;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* ALTERNATE ROW */
+
+.gallery-item:nth-child(even) .photo {
+    order: 2;
+}
+
+/* TEXT */
+
+.gallery-item h3 {
+    align-self: end;
+
+    margin: 0 35px 10px;
+
+    color: #f7ead1;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        "Lucida Handwriting",
+        cursive;
+
+    font-size: 34px;
+    font-style: italic;
+}
+
+.gallery-detail {
+    margin: 0 35px 15px !important;
+    padding: 12px 18px;
+
+    color: #d8c8ae;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.8;
+    font-style: italic;
+
+    border-left: 2px solid #d9b46a;
+
+    background: transparent;
+}
+
+.gallery-price {
+    width: fit-content;
+
+    margin: 0 35px 30px !important;
+    padding: 9px 18px;
+
+    color: #17100d !important;
+
+    background: linear-gradient(
+        135deg,
+        #b98a3c,
+        #f5d991,
+        #c49a4d
+    );
+
+    border-radius: 5px;
+
+    font-weight: bold;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .gallery-item {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .gallery-item:nth-child(even) .photo {
+        order: 0;
+    }
+
+    .gallery-item .photo {
+        height: 350px;
+    }
+
+    .gallery-item h3 {
+        margin: 25px 20px 10px;
+        font-size: 29px;
+    }
+
+    .gallery-detail {
+        margin: 0 20px 15px !important;
+    }
+
+    .gallery-price {
+        margin: 0 20px 25px !important;
+    }
+}
+/* ================= GALLERY PHOTOS ================= */
+
+.photo {
+    width: 100%;
+    height: 430px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    background-color: #17100d;
+}
+
+/* PHOTO 1 */
+.photo1 {
+    background-image: url(" . /IMG-20250802-WA0012.jpg");
+}
+
+/* PHOTO 2 */
+.photo2 {
+    background-image: url(" . /IMG-20250802-WA0013.jpg");
+}
+
+/* PHOTO 3 */
+.photo3 {
+    background-image: url(" . /IMG-20250802-WA0002.jpg");
+}
+
+/* PHOTO 4 */
+.photo4 {
+    background-image: url(" . /IMG-20250802-WA0012.jpg");
+}
+
+/* PHOTO 5 */
+.photo5{
+    background-image: url(" . /IMG-20250802-WA0013.jpg");
+}
+
+/* PHOTO 6 */
+.photo6 {
+    background-image: url(" . /IMG-20250802-WA0002.jpg");
+}
+
+/* ================= PRICING ================= */
+
+.pricing {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(110,73,38,0.20),
+            transparent 35%
+        ),
+        #211613;
+}
+
+.price-list {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 55px auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+.price-row {
+    position: relative;
+
+    width: 100%;
+    min-height: 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 25px 20px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(217,180,106,0.10),
+            rgba(36,25,22,0.80)
+        );
+
+    border: 1px solid rgba(217,180,106,0.25);
+    border-radius: 10px;
+
+    transition: 0.35s;
+}
+
+.price-row::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: linear-gradient(
+        to bottom,
+        #f1d18a,
+        #b98a3c,
+        #f1d18a
+    );
+}
+
+.price-row:hover {
+    transform: translateY(-4px);
+    border-color: rgba(217,180,106,0.60);
+}
+
+.price-row span {
+    color: #f5e6c8;
+    font-size: 18px;
+}
+
+.price-book {
+    display: inline-block;
+
+    padding: 8px 17px;
+
+    color: #17100d !important;
+
+    background: linear-gradient(
+        135deg,
+        #b98a3c,
+        #f5d991,
+        #c49a4d
+    );
+
+    border-radius: 5px;
+
+    font-weight: bold;
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.price-book:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    min-height: 75vh;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(23,16,13,0.50),
+            rgba(23,16,13,0.70)
+        );
+}
+
+.contact > p:not(.label) {
+    max-width: 600px;
+
+    margin: 28px auto;
+
+    color: #d2c3ad;
+
+    font-family: Arial, sans-serif;
+}
+
+.contact-info {
+    margin-top: 25px;
+
+    color: #cdbda6;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.contact-info p {
+    margin: 8px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0f0a08;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.footer-logo {
+    color: #d9b46a;
+
+    font-size: 24px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.footer-logo span {
+    color: #f5e6c8;
+}
+
+footer p {
+    color: #9f9180;
+
+    font-family: Arial, sans-serif;
+
+    margin: 12px 0 25px;
+}
+
+.line {
+    width: 80px;
+    height: 1px;
+
+    background: #d9b46a;
+
+    margin: 25px auto;
+}
+
+footer small {
+    color: #74685b;
+    font-family: Arial, sans-serif;
+}
+
+/* ================= BOOKING FORM ================= */
+
+.booking-overlay {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(5,3,2,0.78);
+
+    backdrop-filter: blur(12px);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.booking-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 500px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+
+    padding: 38px 28px 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #37231b,
+            #19100d
+        );
+
+    border: 1px solid rgba(217,180,106,0.55);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,0.65);
+
+    text-align: center;
+}
+
+.close-booking {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(217,180,106,0.3);
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #d9b46a;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+.booking-box h2 {
+    margin-bottom: 20px;
+
+    font-size: 35px;
+
+    color: #f7ead1;
+}
+
+.booking-box h2 i {
+    color: #d9b46a;
+}
+
+.selected-design,
+.selected-price {
+    color: #cdbda6;
+    margin: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+.selected-design strong {
+    color: #f1d18a;
+}
+
+.selected-price strong {
+    color: #17100d;
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    background: linear-gradient(
+        135deg,
+        #b98a3c,
+        #f5d991,
+        #c49a4d
+    );
+
+    border-radius: 4px;
+}
+
+.booking-box input,
+.booking-box textarea {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 14px;
+
+    background: #15100e;
+
+    border: 1px solid rgba(217,180,106,0.25);
+
+    border-radius: 8px;
+
+    color: #fff;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+}
+
+.booking-box input:focus,
+.booking-box textarea:focus {
+    border-color: #d9b46a;
+}
+
+.booking-box textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.date-field {
+    text-align: left;
+}
+
+.date-field label {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #d9b46a;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.send-whatsapp {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #315f43;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.send-whatsapp:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 70px;
+
+        padding: 0 15px;
+
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 18px;
+
+        overflow-x: auto;
+
+        max-width: 60vw;
+
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 100vh;
+
+        padding: 110px 20px 70px;
+
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero-text {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    section {
+        padding: 85px 18px;
+    }
+
+    section h2 {
+        font-size: 43px;
+    }
+
+    .about {
+        background-attachment: scroll;
+    }
+
+    /* Gallery becomes clean vertical cards */
+
+    .gallery-grid {
+        gap: 25px;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(even) {
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+    .gallery-item:nth-child(even) .photo {
+        order: 0;
+    }
+
+    .photo {
+        width: 100%;
+        height: 350px;
+    }
+
+    .gallery-item h3 {
+        width: calc(100% - 40px);
+
+        margin: 25px 20px 8px;
+
+        font-size: 28px;
+    }
+
+    .gallery-price {
+        margin-left: 20px;
+    }
+
+    .gallery-detail {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .price-row {
+        padding: 18px 15px 18px 22px;
+    }
+
+    .price-row span {
+        font-size: 14px;
+        max-width: 55%;
+    }
+
+    .price-book {
+        font-size: 13px;
+        padding: 7px 12px;
+    }
+
+    .contact {
+        padding: 90px 20px;
+    }
+
+    .buttons a,
+    .contact-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 14px;
+    }
+
+    nav {
+        max-width: 58vw;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    section h2 {
+        font-size: 38px;
+    }
+
+    .photo {
+        height: 310px;
+    }
+
+    .booking-box {
+        padding: 35px 18px 22px;
+    }
+
+    .booking-box h2 {
+        font-size: 30px;
+    }
+}
+.about {
+    min-height: 100vh !important;
+    width: 100% !important;
+
+    padding: 120px 6% !important;
+
+    background-image: url("./about.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero {
+    min-height: 100vh !important;
+    width: 100% !important;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 10, 7, 0.05),
+            rgba(20, 10, 7, 0.12)
+        ),
+        url("./hero.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+.hero::before {
+    display: none !important;
+}
+.about {
+    width: 100% !important;
+    min-height: 100vh !important;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 10, 7, 0.15),
+            rgba(20, 10, 7, 0.20)
+        ),
+        url("./about.png") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    background-attachment: scroll !important;
+}
+/* ================= ABOUT BACKGROUND FINAL FIX ================= */
+
+.about {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 120px 6%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image:
+        linear-gradient(
+            rgba(20, 10, 7, 0.08),
+            rgba(20, 10, 7, 0.12)
+        ),
+        url("./images/about.png");
+
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+/* ================= PREMIUM SIGNATURE COLLECTION ================= */
+
+.gallery-grid {
+    max-width: 1150px;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.gallery-item {
+    display: grid !important;
+    grid-template-columns: 48% 52% !important;
+
+    min-height: 430px;
+
+    background: rgba(36, 25, 22, 0.92);
+
+    border: 1px solid rgba(217, 180, 106, 0.25);
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.30);
+
+    transition: 0.4s ease;
+}
+
+/* Alternate image left/right */
+
+.gallery-item:nth-child(even) {
+    grid-template-columns: 52% 48% !important;
+}
+
+.gallery-item:nth-child(even) .photo {
+    order: 2;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    border-color: rgba(217, 180, 106, 0.65);
+}
+
+/* ================= GALLERY PHOTO ================= */
+
+.photo {
+    width: 100%;
+    height: 430px;
+
+    background-color: #17100d;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: 0.5s ease;
+}
+
+.gallery-item:hover .photo {
+    transform: scale(1.03);
+}
+
+/* ================= TEXT AREA ================= */
+
+.gallery-item h3 {
+    margin: 0 35px 12px;
+
+    color: #f7ead1;
+
+    font-family:
+        "Brush Script MT",
+        "Segoe Script",
+        "Lucida Handwriting",
+        cursive;
+
+    font-size: 34px;
+    font-style: italic;
+    line-height: 1.2;
+
+    text-shadow: 2px 3px 10px rgba(0,0,0,0.6);
+}
+
+.gallery-detail {
+    margin: 0 35px 18px !important;
+
+    padding: 14px 18px;
+
+    max-width: 470px;
+
+    color: #d8c8ae;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    font-style: italic;
+
+    border-left: 2px solid #d9b46a;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(217,180,106,0.09),
+            transparent
+        );
+}
+
+.gallery-price {
+    margin: 0 35px 25px !important;
+
+    padding: 9px 18px;
+
+    color: #17100d !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b98a3c,
+            #f5d991,
+            #c49a4d
+        );
+
+    border-radius: 5px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    display: inline-block;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .gallery-item,
+    .gallery-item:nth-child(even) {
+        display: flex !important;
+        flex-direction: column !important;
+
+        min-height: auto;
+    }
+
+    .gallery-item:nth-child(even) .photo {
+        order: 0;
+    }
+
+    .photo {
+        width: 100%;
+        height: 350px;
+    }
+
+    .gallery-item h3 {
+        margin: 25px 20px 10px;
+        font-size: 29px;
+    }
+
+    .gallery-detail {
+        margin: 0 20px 18px !important;
+    }
+
+    .gallery-price {
+        margin: 0 20px 25px !important;
+    }
+}
+/*
