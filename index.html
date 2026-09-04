@@ -954,17 +954,117 @@ approved: false
     document.getElementById("reviewMessage").value = "";
 
     document.getElementById("reviewRating").value = "5";
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+
+const SUPABASE_URL = "https://crasvvnewgwpsxhjbufw.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_l7RoTPG1g6Ym1Heh3Z-6CA_gX2jfOjD";
+
+const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* ================= LOAD REVIEWS ================= */
+
+async function loadReviews() {
+
+    const reviewsList =
+        document.getElementById("reviewsList");
+
+    if (!reviewsList) return;
+
+    const result = await supabaseClient
+        .from("reviews")
+        .select("name, rating, message, approved")
+        .eq("approved", true)
+        .order("created_at", { ascending: false });
+
+    if (result.error) {
+        console.error("LOAD ERROR:", result.error);
+        return;
+    }
+
+    reviewsList.innerHTML = "";
+
+    result.data.forEach(review => {
+
+        const card = document.createElement("article");
+
+        card.className = "review-card";
+
+        const rating = Number(review.rating) || 0;
+
+        const stars = "★★★★★".slice(0, rating);
+
+        card.innerHTML = `
+            <div class="stars">${stars}</div>
+            <p>${escapeHTML(review.message || "")}</p>
+            <h3>${escapeHTML(review.name || "")}</h3>
+            <small>Customer Review</small>
+        `;
+
+        reviewsList.appendChild(card);
+    });
+}
+
+
+/* ================= SUBMIT REVIEW ================= */
+
+async function submitReview() {
+
+    const name =
+        document.getElementById("reviewName").value.trim();
+
+    const rating =
+        Number(document.getElementById("reviewRating").value);
+
+    const message =
+        document.getElementById("reviewMessage").value.trim();
+
+
+    if (!name || !message) {
+
+        alert("Please enter your name and review.");
+
+        return;
+    }
+
+
+    const result = await supabaseClient
+        .from("reviews")
+        .insert({
+            name: name,
+            rating: rating,
+            message: message,
+            approved: false
+        });
+
+
+    if (result.error) {
+
+        console.error("REVIEW ERROR:", result.error);
+
+        alert("Review Error: " + result.error.message);
+
+        return;
+    }
+
+
+    document.getElementById("reviewName").value = "";
+
+    document.getElementById("reviewMessage").value = "";
+
+    document.getElementById("reviewRating").value = "5";
 
     closeReviewForm();
-
 
     alert(
         "Thank you! Your review has been submitted for approval."
     );
-
-
-    loadReviews();
 }
 
 
@@ -985,11 +1085,10 @@ function escapeHTML(text) {
 document.addEventListener(
     "DOMContentLoaded",
     function() {
-
         loadReviews();
-
     }
 );
+
 </script>
 
 </body>
