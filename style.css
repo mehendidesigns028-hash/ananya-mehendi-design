@@ -444,32 +444,32 @@ section h2 i {
 
 /* PHOTO 1 */
 .photo1 {
-    background-image: url("images/IMG-20250802-WA0012.jpg");
+    background-image: url("./IMG-20250802-WA0012.jpg");
 }
 
 /* PHOTO 2 */
 .photo2 {
-    background-image: url("images/IMG-20250802-WA0013.jpg");
+    background-image: url("./IMG-20250802-WA0013.jpg");
 }
 
 /* PHOTO 3 */
 .photo3 {
-    background-image: url("images/IMG-20250802-WA0002.jpg");
+    background-image: url("./IMG-20250802-WA0002.jpg");
 }
 
 /* PHOTO 4 */
 .photo4 {
-    background-image: url("images/IMG-20250802-WA0012.jpg");
+    background-image: url("./IMG-20250802-WA0012.jpg");
 }
 
 /* PHOTO 5 */
 .photo5 {
-    background-image: url("images/IMG-20250802-WA0013.jpg");
+    background-image: url("./IMG-20250802-WA0013.jpg");
 }
 
 /* PHOTO 6 */
 .photo6 {
-    background-image: url("images/IMG-20250802-WA0002.jpg");
+    background-image: url("./IMG-20250802-WA0002.jpg");
 }
 
 /* ================= PRICING ================= */
