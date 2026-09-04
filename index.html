@@ -923,13 +923,13 @@ async function submitReview() {
         await supabaseClient
             .from("reviews")
             .insert([
-                {
-                    name: name,
-                    rating: rating,
-                    message: message,
-                    approved: false
-                }
-            ])
+    {
+        Nameid: name,
+        Ratting: rating,
+        Massege: message,
+        Approved: false
+    }
+])
             .select();
 
 
