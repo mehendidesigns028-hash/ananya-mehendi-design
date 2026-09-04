@@ -972,38 +972,33 @@ const supabaseClient = window.supabase.createClient(
 
 async function loadReviews() {
 
-    const reviewsList =
-        document.getElementById("reviewsList");
+    const reviewsList = document.getElementById("reviewsList");
 
     if (!reviewsList) return;
 
-    const result = await supabaseClient
+    const { data, error } = await supabaseClient
         .from("reviews")
-        .select("name, rating, message, approved")
-        
-        .order("created_at", { ascending: false });
+        .select("Nameid, Ratting, Massege");
 
-    if (result.error) {
-        console.error("LOAD ERROR:", result.error);
+    if (error) {
+        console.error("Review loading error:", error);
         return;
     }
 
     reviewsList.innerHTML = "";
 
-    result.data.forEach(review => {
+    data.forEach(review => {
 
         const card = document.createElement("article");
-
         card.className = "review-card";
 
-        const rating = Number(review.rating) || 0;
-
+        const rating = Number(review.Ratting) || 0;
         const stars = "★★★★★".slice(0, rating);
 
         card.innerHTML = `
             <div class="stars">${stars}</div>
-            <p>${escapeHTML(review.message || "")}</p>
-            <h3>${escapeHTML(review.name || "")}</h3>
+            <p>${escapeHTML(review.Massege || "")}</p>
+            <h3>${escapeHTML(review.Nameid || "")}</h3>
             <small>Customer Review</small>
         `;
 
