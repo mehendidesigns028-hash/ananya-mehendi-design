@@ -857,7 +857,7 @@ async function loadReviews() {
 
     const { data, error } = await supabaseClient
         .from("reviews")
-        .select("name, rating, message")
+        .select("Nameid, Ratting, Massege")
         .eq("approved", true)
         .order("id", { ascending: false });
 
